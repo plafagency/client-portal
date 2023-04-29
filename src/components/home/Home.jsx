@@ -1,13 +1,15 @@
 import React from "react";
 import TopNavBar from "../nav/TopNavBar";
 import { Box, Container, Divider, Paper, Typography } from "@mui/material";
+import UserGreeting from "./UserGreeting";
 
 function Home() {
   return (
     <div>
       <TopNavBar />
       <Container maxWidth="xl" sx={{ py: 3 }}>
-        <Typography variant="h2">Te damos la bienvenida</Typography>
+        <UserGreeting />
+
         <Divider sx={{ pt: 3, mb: 3 }} />
         <Box
           sx={{
