@@ -57,7 +57,7 @@ function TopNavBar() {
               textDecoration: "none",
             }}
           >
-            PLAF - Área de Clientes (desktop)
+            PLAF - Área de Clientes
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -118,7 +118,7 @@ function TopNavBar() {
               color: "inherit",
             }}
           >
-            PLAF - Área de Clientes (mobile)
+            PLAF - Área de Clientes
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
