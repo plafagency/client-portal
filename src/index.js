@@ -14,7 +14,7 @@ root.render(
     <Auth0Provider
       domain="dev-b1oxd101kkir4ase.us.auth0.com"
       clientId="ccEXIRXdIX0bRV6aDvXaObMzKSjmV4Wm"
-      authorizationParams={{ redirect_uri: window.location.origin }}
+      authorizationParams={{ redirect_uri: "http://localhost:3000/dashboard" }}
     >
       <App />
       <Login />
