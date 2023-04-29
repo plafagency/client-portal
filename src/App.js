@@ -10,7 +10,7 @@ function App() {
         <Routes>
           <Route exact path="/dashboard" Component={Home} />
           <Route path="/estado-de-cuenta" Component={AccountStatus} />
-          <Route path="/" Component={Login} />
+          <Route path="/login" Component={Login} />
         </Routes>
       </div>
     </BrowserRouter>
