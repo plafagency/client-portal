@@ -6,27 +6,15 @@ import logo from "../../img/header-logo-retina.png";
 function Login() {
   return (
     <Container>
-      <Alert
-        severity="info"
-        variant="outlined"
-        sx={{
-          maxWidth: "450px",
-          marginX: "auto",
-          marginY: "25px",
-        }}
-      >
-        Estás visitando una versión Beta de esta web
-      </Alert>
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          bgcolor: "#f0f0f0",
           p: 3,
-          maxWidth: { sm: "none", xl: "1000px" },
           width: "100%",
           margin: "auto",
+          mt: "50px",
           textAlign: "center",
         }}
       >
