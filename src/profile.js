@@ -1,5 +1,4 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { DEFAULT_GRID_COL_TYPE_KEY } from "@mui/x-data-grid";
 import React from "react";
 
 const Profile = () => {

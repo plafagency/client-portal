@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import LoginButton from "../../login";
 
 const API_URL = "https://plaf.agency/wp-json/jwt-auth/v1/token";
 
@@ -46,8 +47,9 @@ function Login() {
   };
 
   return (
-    <div>
-      {isLoading ? (
+    <Container>
+      <LoginButton />
+      {/*  {isLoading ? (
         <Box
           sx={{
             display: "flex",
@@ -87,8 +89,8 @@ function Login() {
             </Button>
           </Box>
         </Container>
-      )}
-    </div>
+      )} */}
+    </Container>
   );
 }
 

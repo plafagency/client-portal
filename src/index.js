@@ -6,6 +6,7 @@ import App from "./App";
 import LoginButton from "./login";
 import LogoutButton from "./logout";
 import Profile from "./profile";
+import Login from "./components/login/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,9 +17,11 @@ root.render(
       authorizationParams={{ redirect_uri: window.location.origin }}
     >
       <App />
-      <LoginButton />
+      <Login />
       <LogoutButton />
-      <Profile />
+      {/*       <LoginButton />
+
+      <Profile /> */}
     </Auth0Provider>
   </React.StrictMode>
 );
