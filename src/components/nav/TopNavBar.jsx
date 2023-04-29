@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import {
   AppBar,
   Container,
@@ -36,6 +37,8 @@ function TopNavBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const { logout } = useAuth0();
 
   return (
     <AppBar position="static">
@@ -156,11 +159,8 @@ function TopNavBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem>Mi Perfil</MenuItem>
+              <MenuItem onClick={logout}>Cerrar sesión</MenuItem>
             </Menu>
           </Box>
         </Toolbar>
