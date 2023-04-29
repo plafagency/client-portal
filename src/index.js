@@ -18,10 +18,9 @@ root.render(
     >
       <App />
       <Login />
-      <LogoutButton />
       {/*       <LoginButton />
 
-      <Profile /> */}
+<Profile /> */}
     </Auth0Provider>
   </React.StrictMode>
 );

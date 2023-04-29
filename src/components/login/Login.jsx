@@ -1,95 +1,57 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Box,
-  TextField,
-  Button,
-  CircularProgress,
-} from "@mui/material";
-import { Navigate } from "react-router-dom";
-import axios from "axios";
+import { Container, Box, Alert, Typography } from "@mui/material";
 import LoginButton from "../../login";
-
-const API_URL = "https://plaf.agency/wp-json/jwt-auth/v1/token";
-
-const login = async (username, password) => {
-  try {
-    const response = await axios.post(API_URL, {
-      username,
-      password,
-    });
-    return response.data.token;
-  } catch (error) {
-    console.error(error);
-    throw new Error("Error en inicio de sesión");
-  }
-};
+import logo from "../../img/header-logo-retina.png";
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [token, setToken] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const handleLogin = async () => {
-    setIsLoading(true);
-    try {
-      const jwt = await login(username, password);
-      setToken(jwt);
-      setIsLoggedIn(true);
-    } catch (error) {
-      console.error(error);
-      setError("Nombre de usuario o contraseña incorrectos");
-    }
-    setIsLoading(false);
-  };
-
   return (
     <Container>
-      <LoginButton />
-      {/*  {isLoading ? (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: "100vh",
-          }}
+      <Alert
+        severity="info"
+        variant="outlined"
+        sx={{
+          maxWidth: "450px",
+          marginX: "auto",
+          marginY: "25px",
+        }}
+      >
+        Estás visitando una versión Beta de esta web
+      </Alert>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          bgcolor: "#f0f0f0",
+          p: 3,
+          maxWidth: { sm: "none", xl: "1000px" },
+          width: "100%",
+          margin: "auto",
+          textAlign: "center",
+        }}
+      >
+        <img src={logo} height="95px" />
+        <Typography variant="h2" component="h1" sx={{ margin: "25px" }}>
+          Portal de Clientes
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          component="p"
+          sx={{ maxWidth: "800px", marginY: "25px" }}
         >
-          <CircularProgress />
-        </Box>
-      ) : isLoggedIn ? (
-        <Navigate to="/dashboard" />
-      ) : (
-        <Container>
-          <Box sx={{ m: 5, display: "flex", flexDirection: "column", gap: 3 }}>
-            <TextField
-              id="username"
-              type="email"
-              label="E-mail"
-              variant="outlined"
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <TextField
-              id="password"
-              type="password"
-              label="Contraseña"
-              variant="outlined"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {error && (
-              <Box sx={{ color: "red" }}>
-                <p>{error}</p>
-              </Box>
-            )}
-            <Button variant="contained" size="large" onClick={handleLogin}>
-              Iniciar sesión
-            </Button>
-          </Box>
-        </Container>
-      )} */}
+          Te damos la bienvenida al portal de Clientes de PLAF. El contenido de
+          este sitio es exclusivo para clientes. Por favor, inicia sesión
+          haciendo clic debajo.
+        </Typography>
+        <Typography
+          variant="caption"
+          component="p"
+          sx={{ maxWidth: "800px", marginY: "25px" }}
+        >
+          Si tienes algún inconveniente, escríbenos a hola@plaf.agency
+        </Typography>
+        <LoginButton />
+      </Box>
     </Container>
   );
 }
