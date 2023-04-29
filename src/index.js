@@ -3,9 +3,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import LoginButton from "./login";
-import LogoutButton from "./logout";
-import Profile from "./profile";
 import Login from "./components/login/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,9 +15,6 @@ root.render(
     >
       <App />
       <Login />
-      {/*       <LoginButton />
-
-<Profile /> */}
     </Auth0Provider>
   </React.StrictMode>
 );
